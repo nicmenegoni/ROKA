@@ -27,7 +27,7 @@ lineAB=zeros(nplane,6);
 for i=1:nplane
     %%Compute intersection between two plane
     tol = 1e-14;% setting the angle cutoff for which pseudo parallel planes (parallel at the CW plane) are not consider.
-    if radius<disccutoff
+    if radius(i)<disccutoff
         
     else
         if abs(cross(Nxyz(i,:), CWNxyz, 2)) > tol
@@ -68,7 +68,7 @@ for i=1:nplane
                 selectAB=zeros(4,4);
                 
                 %Define Sphere (fitted for the 2 considered discs) for Sphere-Line Intersection
-                SPHEREA = [xyz(i,1), xyz(i,2), xyz(i,3),  radius(i)];%definisco la sfera per la discontinuit‡
+                SPHEREA = [xyz(i,1), xyz(i,2), xyz(i,3),  radius(i)];%definisco la sfera per la discontinuit√†
                 SPHEREB = [CWxyz(1,1), CWxyz(1,2), CWxyz(1,3),  CWr];%definisco la sfera per la CW
                 
                 %Use Spehere-Line intersection function of geom3d package
