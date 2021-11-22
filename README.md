@@ -1,13 +1,15 @@
 # ROKA
 ROck slope Kinematic Analysis, perform an ad-hoc stability/kinematic analysis of rock cliff using 3D models and 3D fracture data
 
+ROKA algorithm uses the point cloud and the 3D mapped discontinuity information to perform an ad-hoc kinematic analysis for all the different portion of the slope, taking into account the local orientation of the slope and the position, dimension and attitude of the mapped discontinuity planes.
+Moreover, the algorithm can perform a kinematic test for all the real discontinuities intersections, calculated by the real intersection of the mapped discontinuity plane.
+**To use the algorithm you will need for the Computer Vision Toolbox and the Parallel Computing Toolbox of MATLAB.**
+The Computer Vision Toolbox is needed for the plotting stuff.
+The Parallel Computing Toolbox is needed to speed up the calculation.
 
 Please, for a better explantion of the how works and how use ROKA algorithm see 'ROKA_user_manual.pdf' and 'ROKA_stebystep_guide.pdf' files.
-
-ROKA uses the point cloud and the 3D mapped discontinuity information to perform an ad-hoc kinematic analysis for all the different portion of the slope, taking into account the local orientation of the slope and the position, dimension and attitude of the mapped discontinuity planes.
-Moreover, the algorithm can perform a kinematic test for all the real discontinuities intersections, calculated by the real intersection of the mapped discontinuity plane.
-In the next pages, all the steps necessary for the application of the ROKA algorithm will be described.
-A detailed explanation of the algorithm will be available in Menegoni et al. 2021 (https://doi.org/10.3390/app11041698).
+A scientific explanation of the algorithm is  available in Menegoni et al. 2021 (https://doi.org/10.3390/app11041698).
+In the next paragraphs, all the steps necessary for the application of the ROKA algorithm will be described.
  
 1) Input data formatting
 
