@@ -22,13 +22,13 @@ Fig. 1 See the 'ROKA_user_manual.pdf'file
 
 Option to create the discontinuity information Excel file:
 
-	In the main folder of the algorithm is present a script, called 'dxf_plane_fit.m', that is able to fit a 3D disc and extract a Excel file with all the information required by ROKA, from a dxf file that contains all the discontinuity traces mapped onto the 3D model.
+(a) In the main folder of the algorithm is present a script, called 'dxf_plane_fit.m', that is able to fit a 3D disc and extract a Excel file with all the information required by ROKA, from a dxf file that contains all the discontinuity traces mapped onto the 3D model.
 
-	using the Cloud Compare open-source software, there are several way to map the discontinuities (e.g. tool Trace Polyline; plugin Compass developed by Thiele et al., 2017), find their best-planes (e.g. tool-->Fit-->Plane) and then export the best-fit planes information (tool-->Batch Export--> Export plane info).
+(b) using the Cloud Compare open-source software, there are several way to map the discontinuities (e.g. tool Trace Polyline; plugin Compass developed by Thiele et al., 2017), find their best-planes (e.g. tool-->Fit-->Plane) and then export the best-fit planes information (tool-->Batch Export--> Export plane info).
 
 The main problem with the second method is that it fits to the mapped discontinuity a 3D planar rectangle and, therefore, the 'radius' of the Beacher's discs, that represent the discontinuity and that is required by the ROKA algorithm, is not calculated. To achieve the radius, the authors suggest to use the Pithagoras' Theorem to calculate the max extension of fitted rectangle and consider it as the diameter of the discontinuity Beacher's disc. Therefore, for example it is possible to calculate the radius from the height and width of a rectangular best-fit plane using the formula:
 
-radius\ =\ \frac{\sqrt[2]{({length}^2+{height}^2\ \ )}}{2}
+radius = radq(length^2+height^2)/2
 
 where radius is the radius of the Beacher's disc representing the discontinuity, length is the length of the rectangular best-fit plane and height is the height of the rectangular best-fit plane. This calculation could be done in a very simple way using spreadsheets.
 The data will be load during after the launch/start/run of the code. 
