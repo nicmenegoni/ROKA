@@ -72,5 +72,5 @@ For a description of how these output information are calculated please see the 
 
 Niccolò Menegoni, Ph.D
 Department of Earth and Environmental Sciences - University of Pavia
-niccolo.menegoni01@universitadipavia.it
-
+niccolo.menegoni@unipv.it (work e-mail)
+niccolo.menegoni@live.it (personal e-mail)
