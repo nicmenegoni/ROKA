@@ -3,6 +3,7 @@ ROck slope Kinematic Analysis, perform an ad-hoc stability/kinematic analysis of
 
 ROKA algorithm uses the point cloud and the 3D mapped discontinuity information to perform an ad-hoc kinematic analysis for all the different portion of the slope, taking into account the local orientation of the slope and the position, dimension and attitude of the mapped discontinuity planes.
 Moreover, the algorithm can perform a kinematic test for all the real discontinuities intersections, calculated by the real intersection of the mapped discontinuity plane.
+
 **To use the algorithm you will need for the Computer Vision Toolbox and the Parallel Computing Toolbox of MATLAB.**
 The Computer Vision Toolbox is needed for the plotting stuff.
 The Parallel Computing Toolbox is needed to speed up the calculation.
