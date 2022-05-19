@@ -296,13 +296,13 @@ dip = 90 + rad2deg(asin(-cosGamma));
 
 if dip == 0
     dipdir = 0;
-elseif cosAlpha > 0 && cosBeta > 0
+elseif cosAlpha >= 0 && cosBeta >= 0
 dipdir = rad2deg(atan(cosAlpha/cosBeta));
-elseif cosAlpha > 0 && cosBeta < 0
+elseif cosAlpha >= 0 && cosBeta < 0
 dipdir = 180 + rad2deg(atan(cosAlpha/cosBeta));
 elseif cosAlpha < 0 && cosBeta < 0
 dipdir = 180 + rad2deg(atan(cosAlpha/cosBeta));
-elseif cosAlpha < 0 && cosBeta > 0
+elseif cosAlpha < 0 && cosBeta >= 0
 dipdir = 360 + rad2deg(atan(cosAlpha/cosBeta));
 end
 
