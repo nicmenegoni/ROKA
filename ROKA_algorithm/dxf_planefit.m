@@ -294,7 +294,9 @@ cosGamma = N(1,3)/norm(N);
 
 dip = 90 + rad2deg(asin(-cosGamma));
 
-if cosAlpha > 0 && cosBeta > 0
+if dip == 0
+    dipdir = 0;
+elseif cosAlpha > 0 && cosBeta > 0
 dipdir = rad2deg(atan(cosAlpha/cosBeta));
 elseif cosAlpha > 0 && cosBeta < 0
 dipdir = 180 + rad2deg(atan(cosAlpha/cosBeta));
