@@ -152,7 +152,7 @@ for i=1 : max(XYZNCloud(:,4))%max(XYZNCloud(:,4)=number of planes
     end
     if (numel(temp_PC)/3)>2
         if plane(1,1) == 0 && plane(1,2) == 0 && plane(1,3) == 0
-            plane(1,:)=fit3dplane_2(temp_PC);
+            plane(1,:)=fit3dplane(temp_PC);
         else
             plane(1+numel(plane)/13,:)=fit3dplane(temp_PC);
         end
