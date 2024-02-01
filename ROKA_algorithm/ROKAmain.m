@@ -9,9 +9,9 @@ disccutoff=2*userSPr*0.9;%define the cutoff value of the intersection between di
 
 uselatlimits=1;% Define if you use the lateral limits or not, and give a value (YES=1 and NO=0)
 
-latlimits=20;%Define lateral limits (Godmann report 20°)
+latlimits=20;%Define lateral limits (Godmann report 20Â°)
 
-frictionangle=30;%Define the friction angle (commonly 30°)
+frictionangle=30;%Define the friction angle (commonly 30Â°)
 
 export_AllIntersection=0;%Define if you want to export all the disconinuity intersection (also the non-crtitical)
 
@@ -291,11 +291,53 @@ disp('#######################')
 disp(['END OF TOTAL PROCESSES at ', num2str(toc/60),' minutes'])
 disp('#######################')
 
-disp('#####STATISTICS########')
-disp(['ScanPlane radius (SPr)------------------'])
-disp(['mean)', num2str(mean(SPr)),' meters'])
-disp(['max)', num2str(max(SPr)),' meters'])
-disp(['min)', num2str(min(SPr)),' meters'])
+disp('-------> POINT CLOUD STATISTICS<-------')
+disp(['Analyzed Point Cloud, ', PCfn])
+disp(['Number of points, ', num2str(nPC)])
+disp(' ')
+disp('-------> SCAN PLANE STATISTICS<-------')
+disp(['Mean radius of the scan plane, ', num2str(mean(SPr))])
+disp(['Mean point density of scan plane, ', num2str(mean(SPrho))])
+disp(['St.dev. radius of the scan plane, ', num2str(std(SPr))])
+disp(['st.dev. point density of scan plane, ', num2str(std(SPrho))])
+disp(['Max radius of the scan plane, ', num2str(max(SPr))])
+disp(['Max point density of scan plane,  ', num2str(max(SPrho))])
+disp(['Min radius of the scan plane, ', num2str(min(SPr))])
+disp(['Min point density of scan plane, ', num2str(min(SPrho))])
+disp(' ')
+disp('-------> KINEMATIC ANALYSIS <-------')
+disp('Results of disconinuity planes')
+disp('Set    ,N.Disc , N.PS , %PS, N.FT , %FT')
+disp(['All    , ', num2str(nplane),' , ',...
+    num2str(sum(CDM(:,1)>0)),' , ',...
+    num2str(sum(CDM(:,1)>0)/nplane*100, '%.2f'),'% , ',...
+    num2str(sum(CDM(:,2)>0)),' , ',...
+    num2str(sum(CDM(:,2)>0)/nplane*100, '%.2f'),'%'])
+for i = 1: nSet
+    idx_set=Set_name(i);
+    if idx_set>0
+        disp([num2str(idx_set),'      , ',num2str(sum(Set(:)==idx_set)),' , ',...
+            num2str(sum(CDM(Set(:)==idx_set,1)>0)),' , ',...
+            num2str((sum(CDM(Set(:)==idx_set,1)>0)/sum(Set(:)==idx_set))*100, '%.2f'),'% , ',...
+            num2str(sum(CDM(Set(:)==idx_set,2)>0)),' , ',...
+            num2str(sum(CDM(Set(:)==idx_set,2)>0)/sum(Set(:)==idx_set)*100, '%.2f'),'%'])
+       
+    else
+        disp(['Random , ',num2str(sum(Set(:)==0)),' , ',...
+            num2str(sum(CDM(Set(:)==i,1)>0)),' , ',...
+            num2str((sum(CDM(Set(:)==i,1)>0)/sum(Set(:)==0))*100, '%.2f'),'% , ',...
+            num2str(sum(CDM(Set(:)==i,2)>0)),' , ',...
+            num2str(sum(CDM(Set(:)==i,2)>0)/sum(Set(:)==0)*100, '%.2f'),'%'])
+    end
+end
+disp(' ')
+disp('Results of discontinuity intersections')
+disp('N.Int. , N.WS , %WS, N.DT , %DT')
+disp([num2str(num_Int),' , ',...
+    num2str(sum(CIM(:,1)>0)),' , ',...
+    num2str(sum(CIM(:,1)>0)/num_Int*100, '%.2f'),'% , ',...
+    num2str(sum(CIM(:,2)>0)),' , ',...
+    num2str(sum(CIM(:,2)>0)/num_Int*100, '%.2f'),'%'])
 
 
 % END - Audio message
