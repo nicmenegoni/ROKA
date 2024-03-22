@@ -25,8 +25,8 @@ pole_DipDir(DipDir > 180) = DipDir(DipDir > 180) - 180;% calculate the pole tren
 %% Setting storage variables
 nPS=0; nFT=0; nWS=0; nDT=0; nOT=0;%indicators for the possible MoF onto the point cloud
 nCritic_line=zeros(1,5);%here, the previous MoF indicators will be stored
-criticDisc=zeros(num_Int,2);%array where the the criticallity for the intersection are stored (1=positive to MoFs; 0=negative)
-criticInt=zeros(num_disc,3);%array where the the criticallity for the intersection are stored (1=positive to MoFs; 0=negative)
+criticDisc=zeros(num_disc,2);%array where the the criticallity for the intersection are stored (1=positive to MoFs; 0=negative)
+criticInt=zeros(num_Int,3);%array where the the criticallity for the intersection are stored (1=positive to MoFs; 0=negative)
 
 %% Kynematic analysis
 
