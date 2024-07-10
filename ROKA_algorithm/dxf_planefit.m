@@ -59,7 +59,7 @@ close all
 % select path in which DXF of Circular Plane will be saved
 uiwait(msgbox('Select folder for CircPlane.dxf'));
 pathCircPlane=uigetdir(pathname, 'Select folder for CircPlane.dxf');
-disp('########### START OF FITTING PROCCES ##########')
+disp('########### START OF FITTING PROCESS ##########')
 tic
 %% Read file
 fId = fopen(fullfile(pathname,filename));
