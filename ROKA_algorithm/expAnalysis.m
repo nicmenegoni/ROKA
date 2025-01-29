@@ -16,7 +16,8 @@ function expAnalysis(pathname,Fracdata,Fracset,Int_data,CDM,CIM,PC,PCcritic,usel
 
 
 %% FUNCTION CODE
-warning('off')
+warning('off')%turn off the warnings. Otherwise the recurrent mkdir functions can give lot of warning (e.g., "the directory already exists")
+mkdir (pathname,'KinAnalysis')%create an empty folder where to save the results
 Color = {'k','b','r','g','y',[.5 .6 .7],[.8 .2 .6]};
 disp('Strarting to export the critical discontinuities')
 for i=1:length(Fracdata{:,1}) %export critical plane
