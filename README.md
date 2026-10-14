@@ -74,7 +74,7 @@ Before running the analysis, configure the calculation parameters inside the mai
 | Parameter | Type / Unit | Description |
 | :--- | :--- | :--- |
 | `userSPr` | Meters (`m`) | Scan radius size (e.g., `0.15` for 15 cm). |
-| `disccutoff` | Meters (`m`) | Cutoff value for intersection between discontinuity and scan-plane. Default is 90% of scan-plane diameter. |
+| `disccutoff` | Percentual (`%`) | Cutoff value for intersection between discontinuity and scan-plane. Default is 75% of scan-plane diameter. |
 | `latlimits` | Degrees (`°`) | Lateral limits angle for kinematic tests. |
 | `frictionangle` | Degrees (`°`) | Friction angle of discontinuity surfaces. |
 | `uselatlimits` | Binary (`1` / `0`) | Enforce lateral limits (`1` = active, `0` = inactive). |
